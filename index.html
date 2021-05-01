@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fly With All</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800.900&display=swap");
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #2a9feb,white);
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.msgBox{
+    position: relative;
+    background-color: inherit;
+    height: 400px;
+    width: 680px;
+    overflow-y: auto;
+    left: 260px;
+    bottom: 90px;
+    border-radius: 37px;
+    color: white;
+    overflow-x: hidden;
+
+}
+
+.chatbox .text{
+    position: relative;
+    border-radius: 24px;
+    width: 550px;
+    height: 35px;
+    top: 200px;
+    bottom: 20px;
+    outline: none;
+    border: 2px solid #2a9feb;
+    background: black;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    right: 370px;
+    transition: 0.25s;
+
+}
+.chatbox .text:focus {
+    height: 45px;
+}
+
+.msgs{
+    position: relative;
+    left: 80px;
+    top: 60px;
+    bottom: 30px;
+    width: 300px;
+    color: white;
+    margin-left:15em;
+    margin-right:25em;
+    margin-bottom: 20px;
+    padding: 0.5em 0.5em 0.5em 1em;
+    background: #323232;
+    border-radius: 25px;
+    border-color: #206ED2;
+    border-width: 1px;
+    border-style: solid;
+    float:  left;
+    clear: left;
+    overflow: hidden;
+    word-break: break-all;
+    word-spacing: .5em;
+    animation-name: fadeIn;
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+.others-msgs{
+    position: relative;
+    left: 40px;
+    top: 60px;
+    bottom: 20px;
+    color: white;
+    display:inline-block
+    margin-left:5em;
+    margin-right:5em;
+    margin-bottom: 20px;
+    padding: 0.5em 0.5em 0.5em 1em;
+    background: #323232;
+    border-radius: 25px;
+    border-color: #206ED2;
+    border-width: 1px;
+    border-style: solid;
+    float:  left;
+    clear: left;
+    overflow: hidden;
+    word-break: break-all;
+    word-spacing: .5em;
+    animation-name: fadeIn;
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.msgBox::-webkit-scrollbar {
+    width: 12px;
+}
+
+.msgBox::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+.msgBox::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+.msgBox::-webkit-scrollbar-thumb:hover {
+  background: #323232;
+}
+#Chat_Btn{
+    display: none;
+}
+.btn{
+    position: relative;
+    border: 2px;
+    background: yellow;
+    top: 95px;
+    left: 230px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+}
+
+@media (max-width: 900px){
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:  linear-gradient(45deg, #2a9feb,white);
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .msgBox{
+        position: relative;
+        background-color: inherit;
+        height: 400px;
+        width: 480px;
+        bottom: 90px;
+        border-radius: 37px;
+        color: white;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+    }
+
+    .chatbox .text{
+        position: relative;
+        border-radius: 24px;
+        width: 450px;
+        height: 35px;
+        top: 200px;
+        bottom: 20px;
+        outline: none;
+        border: 2px solid #2a9feb;
+        background: #323232;
+        color: white;
+        right: 220px;
+        padding-left: 15px;
+        padding-right: 15px;
+        transition: 0.25s;
+    }
+    .chatbox .text:focus {
+        height: 45px;
+    }
+
+
+
+    .msgs{
+        position: relative;
+        left: 60px;
+        top: 50px;
+        bottom: 20px;
+        width: auto;
+        color: white;
+        margin-left:10em;
+        margin-right:5em;
+
+    }
+    .others-msgs{
+        position: relative;
+        left: 40px;
+        top: 60px;
+        bottom: 20px;
+        color: white;
+        display:inline-block
+
+    }
+
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+
+}
+
+@media (max-width: 500px){
+
+    .msgBox{
+        position: relative;
+        right: 50px;
+        background-color: inherit;
+        height: 400px;
+        width: 400px;
+        bottom: 90px;
+        border-radius: 37px;
+        color: white;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+    }
+    .container{
+        position: relative;
+        right: 6em;
+    }
+    .chatbox .text{
+        position: relative;
+        width: 300px;
+        height: 35px;
+        top: 200px;
+        bottom: 20px;
+        outline: none;
+        right: 210px;
+        padding-left: 15px;
+        padding-right: 40px;
+    }
+    .chatbox .text:focus {
+        height: 45px;
+    }
+
+    .msgs{
+        position: relative;
+        left: 5px;
+        top: 40px;
+        bottom: 20px;
+        width: auto;
+        height: auto;
+        color: white;
+        margin-right:10px;
+        display: inline-block
+    }
+    .others-msgs{
+        position: relative;
+        left: 10px;
+        top: 70px;
+        bottom: 20px;
+        color: white;
+        margin-left:5px;
+
+    }
+
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+    .btn{
+        left: 115px;
+    }
+
+}
+  </style>
+</head>
+<body>
+<div class="container">
+    <div>
+<div class="msgBox" id="msg_box">
+
+</div></div></div>
+<div class="chatbox">
+<form method="POST" action='' enctype = "multipart/form-data">
+    <input id='chat_Input' class="text"  placeholder="Say hii.."><br><br>
+    <br><br>
+    <button class="btn" type="button"><i class="fa fa-smile-o"  aria-hidden="true"></i>
+</button>
+    <input id='Chat_Btn' type="button" >
+</form>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='scripts/world_chat.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='scripts/secure.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='scripts/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='scripts/socket.io.js')}}"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emoji-button@latest/dist/index.min.js"></script>
+        <script>
+            var thakkol = '{{ thakkol }}'
+            var inputPlace = document.querySelector('.text');
+            var pressbtn = document.querySelector('.btn');
+            var picker = new EmojiButton({
+                position: 'right-start'
+            })
+            picker.on('emoji', function(emoji){
+              document.querySelector('.text').value += emoji;
+            });
+
+              pressbtn.addEventListener('click', function(){
+                picker.pickerVisible ? picker.hidePicker() : picker.showPicker(inputPlace);
+          })
+        </script>
+  <script>
+    ocument.addEventListener('DOMContentLoaded', () => {
+
+
+    var socket = io('http://127.0.0.1:4545/world-chat');
+
+    socket.on('connect', function() {
+        socket.emit('world-chat', 'joined');
+
+    });
+    socket.on('disconnect', function() {
+        socket.emit('world-chat', 'leaved');
+    });
+
+
+    socket.on('message', data => {
+        if (data){
+            var username = sessionStorage.getItem("user_name"); ;
+             if (data.username == username){
+                const p = document.createElement('p');
+                p.setAttribute("class", "msgs");
+
+                if (data.msg === 'joined'){
+                    p.innerText =  'Lets all chat together...'
+
+                    document.querySelector('#msg_box').append(p);
+
+                    scrollDownChatWindow();
+                } else {
+
+                    p.innerText =  data.username + '  ' + ':' + '  ' + data.msg;
+
+                    document.querySelector('#msg_box').append(p);
+
+                    scrollDownChatWindow();
+                }
+             }else {
+                const p = document.createElement('p');
+                p.setAttribute("class", "others-msgs");
+
+                p.innerText =  data.username + '  ' + ':' + '  ' + data.msg;
+
+               document.querySelector('#msg_box').append(p);
+
+                scrollDownChatWindow();
+             }
+        }
+
+    });
+
+
+    document.querySelector('#Chat_Btn').onclick = () => {
+        message_to = document.querySelector('#chat_Input').value;
+
+        socket.emit('world-chat', message_to);
+
+        document.querySelector('#chat_Input').value = '';
+    }
+
+    let msg = document.getElementById("chat_Input");
+    msg.addEventListener("keydown", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            socket.emit('world-chat', document.querySelector('#chat_Input').value);
+            document.querySelector('#chat_Input').value = '';
+        }
+
+    });
+
+    function scrollDownChatWindow() {
+        const chatWindow = document.querySelector("#msg_box");
+        chatWindow.scrollTop = chatWindow.scrollHeight + 15;
+
+    }
+
+
+
+});
+  </script>
+</body>
+</html>
