@@ -305,14 +305,10 @@ body {
     <input id='Chat_Btn' type="button" >
 </form>
 </div>
-
-<script type="text/javascript" src="{{ url_for('static', filename='scripts/world_chat.js')}}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='scripts/secure.js')}}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='scripts/jquery.min.js')}}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='scripts/socket.io.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emoji-button@latest/dist/index.min.js"></script>
         <script>
-            var thakkol = '{{ thakkol }}'
             var inputPlace = document.querySelector('.text');
             var pressbtn = document.querySelector('.btn');
             var picker = new EmojiButton({
@@ -327,7 +323,7 @@ body {
           })
         </script>
   <script>
-    ocument.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
 
 
     var socket = io('http://127.0.0.1:4545/world-chat');
